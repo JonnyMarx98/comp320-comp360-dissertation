@@ -49,6 +49,9 @@
 
 \usepackage{graphicx}
 % Insert additional usepackage commands here
+\usepackage{titlesec}
+\usepackage[hyphens]{url} 
+\usepackage[hidelinks]{hyperref} % Allows clickable reference lists
 
 \begin{document}
 %
@@ -58,11 +61,11 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Your title here}
+\title{Can Mixed Reality Be Used To Enhance The Learning Experience Of An Escape Room}
 %
 %
 % author name
-\author{Your name here}
+\author{Jonathan Marx}
 
 % The paper headers -- please do not change these, but uncomment one of them as appropriate
 % Uncomment this one for COMP320
@@ -76,7 +79,7 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-The abstract goes here.
+This paper examines the use of escape rooms and mixed reality, specifically the learning and educational use. There has been research into the use of escape rooms for educational purposes, however it has been more focused on the design than the potential improvement for learning. Much research has shown the learning improvement possibilities that augmented reality can bring to education. This paper looks at how the use of mixed reality can positively affect the learning potential of an escape room experience.
 \end{abstract}
 
 \section{Introduction}
@@ -95,16 +98,141 @@ The abstract goes here.
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{T}{his} demo file is intended to serve as a ``starter file''
-for your final year project dissertation.
-Use this template for your literature review and proposal in COMP320,
-which you will then expand into your dissertation in COMP360.
+\IEEEPARstart{M}{ixed reality} is a fairly new technology that has advanced a lot in recent years. Mixing the real-world with the virtual world provides the user with a unique sense of immersion that they would not be able to experience with anything else. Figure 1 shows where it sits on the reality continuum. With new technologies, like the Microsoft HoloLens \cite{microsoft_HoloLens} and the Magic Leap One \cite{magic}, we can enhance the real world by augmenting virtual objects onto real world objects, in a very immersive way. Escape rooms are live-action team games set in a room where players are challenged to complete puzzles and find clues in order to escape the room.
 
-Insert more sections here.
-Use BibTeX~\cite{bibtex} to cite relevant literature.
+This research is going to investigate how the Microsoft HoloLens can enhance the learning experience of an escape room experience. This paper will further prove the potential educational benefit of both mixed reality and escape rooms, specifically for university students. 
 
-\section{Conclusion}
-The conclusion goes here.
+Escape rooms and augmented reality have both been used to enhance education \cite{clarke_escaped:_2017, kraut_improving_2015, billinghurst_augmented_nodate, shams_benefits_2008}, the educational potential of both could be leveraged if they are combined. Escape rooms can be educational using the puzzle design of the room and other factors \cite{clarke_escaped:_2017}, on the other hand AR can enhance understanding and learning speed by providing an interactive experience and using multi-sensory learning \cite{shams_benefits_2008, kraut_improving_2015}.
+
+The research question that will be addressed in this project is: Can Mixed Reality Be Used To Enhance The Learning Experience Of An Escape Room. 
+
+\subsection{Road-map}
+	Section~\ref{RelatedWork} is a review of the literature on existing relevant work. The two main areas reviewed are mixed reality and escape rooms, these are further split into subsections of each area. Firstly the literature review defines mixed reality, acknowledges the current state of the technology and explains the way augmented reality has been used to enhance experiences in various ways. What escape rooms are and how they are used is then explained, the design of escape rooms is understood, and existing novel escape rooms are explored. Finally, educational games and a further look into augmented reality being used for education is discussed and acknowledged. 
+	Section~\ref{Methodology} details the methodology used in the experiments in this study.
+
+\section{Related Work} \label{RelatedWork}
+
+\subsection{Mixed Reality} \label{MR}
+Mixed reality (MR) is the merging of the real world with the virtual world where real objects and virtual objects co-exist in real time. Augmented reality (AR) and mixed reality are often used like synonyms because augmented reality is a form of mixed reality. AR is any technology that augments objects onto the users' view, these augmented objects can either mask over the real environment or they can add to it as if it were a part of it. A mixed reality environment was first defined in 1994 as an environment in which ``real world and virtual objects are presented together in a single display, that is, anywhere between the extrema of the reality-virtuality (RV) continuum'' \cite{milgram_augmented_1994}. The RV continuum is the range between the real environment and the virtual environment, the mixed reality is anywhere between and is split into two categories, augmented reality and augmented virtuality (AV).  AV is the augmenting of real world objects into the virtual environment.
+
+\includegraphics[width=242pt]{rvcontinuum}
+Figure 1. Simplified representation of a RV Continuum \cite{milgram_augmented_1994}
+\newline
+
+\subsubsection{State of AR Technology}
+There are many different AR technologies available today, some of which are fairly simple and others very complex and immersive \cite{smpteconnect_smpte_nodate}. Firstly, there is AR technology available for mobile devices that can detect planes in the real world for users to place virtual objects on. More immersive technologies include AR head mounted displays (HMD), which have similar capabilities to the mobile AR but these devices are much more powerful and immersive. A lot of AR HMDs are used for specific cases such as building and enterprise. The most complex and highest specification device/technology is the Microsoft Hololens \cite{microsoft_HoloLens} which is a wireless holographic HMD. There is also a very new device, the Magic Leap One \cite{magic}, which is very similar to the Hololens, at the time of writing. The Magic Leap is also a holographic HMD but it isn't completely wireless like the Hololens, instead, it is attached to a small PC you can put in your pocket.
+
+\subsubsection{HoloLens} \label{HoloLens}
+The Microsoft HoloLens is the first self-contained, holographic computer, enabling you to engage with your digital content and interact with holograms in the world around you \cite{microsoft_HoloLens}. Many people describe it as a Windows 10 PC that is mounted on the users' head, that is exactly what it is and that is one of the reasons it is so unique. Unlike many other HMDs, all of the processing is done on the device, making it tetherless and portable.
+\paragraph{Technical Capability} \label{technical capability}
+ The HoloLens is a powerful device, it has a lot of unique capabilities such as spatial mapping and understanding, however, it does have some drawbacks. Because it is a standalone device it has limited processing power and memory. Developers have to limit the quality and size of textures \cite{dong_real-time_2018} if they want their applications to run smoothly. The processing on the HoloLens is split into three units, the CPU, GPU and HPU (Holographic Processing Unit). The HPU processes a lot of the data from the spatial mapping components, namely the cameras and sensors, which allows the CPU and GPU to focus on running the apps and displaying the holograms \cite{chinara_arnold:_2017}. 
+ 
+ There are five main operational mechanisms on the HoloLens: real environment reconstruction, virtual environment processing, head pose estimation, user perception, and user control \cite{liu_technical_2018}. Liu et al evaluated the functional components of the device and found some of the optimal conditions for it to perform well. An interesting finding was the head posture is most accurately estimated at low movement speeds, so developers shouldn't place objects too far apart if the user needs to look at one after another quickly. Another notable condition is the requirement of good lighting to reconstruct the environment precisely. Chinara \textit{et al} \cite{chinara_arnold:_2017} claim that it is a well-known fact that the HoloLens requires good lighting to function properly. 
+
+\subsubsection{Uses of AR to enhance experiences} \label{AR uses}
+Augmented reality has been used in various ways to enhance existing experiences, such as entertainment, education, and driving assistance.
+\paragraph{Entertainment}
+In 2016 Microsoft released a concept video \cite{HoloLens_lookintofuture} showing what they believe the future of viewing sports on TV could be like with the HoloLens. Some researchers took inspiration from this video and investigated the possibility of it with the current state of HoloLens \cite{stropnik_look_2018}. With the help of the Sportradar company \cite{sportradar} Stropnik \textit{et al} developed and evaluated a prototype for visual presentation of match related statistics. They concluded that the technology in it's current state can emulate some, but not all, of the ideas shown in Microsoft's video. The main issue noted here was the narrow field of view (FOV), which is approximately 35 degrees. This small FOV will be taken into consideration when developing the research artefact.
+
+\paragraph{Education}
+Other research has explored how AR could be used to improve education, both teaching and learning. AR provides an interactive experience, which has been shown to enhance the process of learning.
+
+In a classroom, students often work better and communicate effectively if they are all focusing on one thing, rather than sitting separately at individual computer. With an augmented reality learning experience, students can all see the virtual object together and communicate with each other easily. What's more, unlike regular computer interfaces, AR interfaces can offer a seamless interaction between the real and virtual worlds \cite{billinghurst_augmented_nodate}. 
+
+One study suggests that with the use of AR the current generation of students could learn faster, better and retain knowledge for longer than before \cite{kraut_improving_2015}. In their paper they developed and tested an AR application for learning, all the results showed that AR enhanced understanding and increased learning speed. They also discuss how AR could improve learning as it offers multi-sensory learning, this is the use of multiple senses, such as visual and aural. Multi-sensory learning has been shown to be more effective than traditional uni-sensory learning, due to cognitive mechanisms being evolved and tuned to process multi-sensory signals \cite{shams_benefits_2008}. Another benefit noted by Kruat and Jeknić \cite{kraut_improving_2015} is that, educational information is often distributed through books which get outdated fairly quickly, however digital information that can be distributed through AR can be updated very easily.
+
+AR can be more useful for certain fields of education, particularly subjects which involve 3D visualisation such as architecture or engineering.  Chen \textit{et al} shows an example of this is using an AR model presentation system to improve student understanding of the relationship between 3D objects and their projection \cite{chen_application_2011}. The paper proposes an application for improving engineering graphics learning. The proposed solution is an application that displays 3D virtual models onto a real page which has the model 2D design on. It is sometimes hard for students to visualise what a model will look like in 3D from 2D drawings on a page, this is where the AR system can be useful. More about augmented reality for education in Section~\ref{Augmented Reality Education}.  
+
+\paragraph{Driving Assistance}
+Recently, as AR technology has grown, it has been used to assist driving in various ways, particularly navigation and driving safety. Drivers should always be looking at the road ahead and being aware of their surroundings, having an AR display would mean the driver can stay focused while also receiving useful assistance.
+
+A comparative study compares three AR displays for driving assistance: Heads Up Display (HUD), Head Mounted Display (HMD), and Heads Down Display \cite{jose_comparative_2016}. From the results they found that the HUD was the best is most areas, notably it produced the least navigational errors. This was most likely due to it being located in the driver's primary viewing area, so they didn't need to take their eyes off the road (as they did with HDD) or out of focus (as they did with HMD).
+
+Another paper discuss the potential of an AR driver assistance system with more of a focus on safety and guidance than navigation. Yoon and Kim \cite{yoon_augmented_2015} present an Augmented Reality Head-Up Display (AR-HUD) system. Similarly to the HUD in Jose \textit{et al} \cite{jose_comparative_2016} AR-HUD displays information to the drivers view, however, AR-HUD uses projective transformation to match the AR information correctly to the real world. Using this it overlays the real world with useful information such as, highlighting pedestrians in front of the car, providing lane change guidance, and displaying a vehicle collision warning when another car is too close.    
+
+
+
+\subsection{Escape Rooms} \label{Escape}
+Escape rooms are live-action team-based games where players are faced with a goal (usually escaping the room). To complete this goal players discover clues, solve puzzles and accomplish tasks in one or more rooms in a limited amount of time \cite{nicholson_state_nodate,warmelink_amelio:_2017}. 
+Escape rooms have grown rapidly in popularity in the last decade, they started in Japan in 2007 and then migrated across Asia and eventually to Europe, North America and Australia \cite{pan_collaboration_2017,nicholson_state_nodate}. 
+\subsubsection{Use of Escape Rooms}
+As escape rooms have had a rapid growth in popularity they have caught the eye of researchers and teachers. The majority of escape rooms are used purely for fun and profit, however, according to Nicholson \cite{nicholson_state_nodate} about 30\% of them have learning outcomes designed into them, some of which are purely for education (8\%). The escapeED programme \cite{clarke_escaped:_2017} is a good framework for creating educational escape rooms. Escape rooms are also commonly used as a team building activity \cite{warmelink_amelio:_2017}, especially used by corporate groups to improve team communication and attitude towards each other.
+\subsubsection{Designing Escape Rooms}
+To design an escape room, a lot of things should be considered. The escapED framework \cite{clarke_escaped:_2017} provides a detailed methodology for creating educational escape rooms but could also be used to create a traditional entertainment based room.
+\newline
+
+\includegraphics[width=242pt]{escapED}
+Figure 2. The escapED Framework  \cite{clarke_escaped:_2017}
+\newline
+
+\paragraph{Theme}
+When designing an escape room, considering how the theme and story, if there is one, will be implemented is important. Most escape rooms have some sort of theme, narrative or both. A recent survey of escape rooms found that there are multiple levels for the theme and narrative of escape rooms \cite{nicholson_state_nodate}. Escape rooms can have no theme or narrative and just be a set of puzzles and tasks to complete; they can have a theme, like "Escape the haunted house", but no linear narrative; they could have a narrative, but the puzzles don't directly affect this narrative and could stand independently of the story; or finally they could have a narrative in which the puzzles directly move the story forwards and cannot be separated from the narrative \cite{nicholson_state_nodate}. Each of these design paths is best for different types of players, not all players are seeking an immersive story-driven experience, and not all players just want to be solving puzzles and tasks with no story behind them.
+
+\subsubsection{Existing Novel Escape Rooms} \label{Novel Escape Rooms}
+Multiple interesting and unique escape room experiences have been designed fairly recently. 
+
+Escape rooms usually involve team work and collaboration in person, an interesting paper presents a solution for a distributed escape room, in which there are two separate rooms that are connected though audio and video \cite{shakeri_escaping_2017}. Shakeri \textit{et al} explored the potential of a distributed escape room that allows players located around the world to play together, which could be useful for long distance co-workers, family or friends \cite{shakeri_escaping_2017}.
+
+A highly relevant piece of research is from a group of researchers from the Netherlands \cite{warmelink_amelio:_2017} which investigated the potential of a Mixed Reality Escape Room for team-building. They explained that Virtual Reality escape rooms are becoming quite popular, see Section~\ref{VR Escape Rooms}, but unlike Mixed Reality, the users have no visual perception of the real world in VR. MR allows for a mixed experience between the real and virtual world \cite{warmelink_amelio:_2017}. The game for this study was created in an advanced VR/MR laboratory, which allowed multiple players to play and all experience the MR. A downside to this is that it can only be played in that specific environment, or one that is very similar. An interesting finding from this study was that audio played a more important role than expected, whereas, visuals and difficulty weren't as important. Warmelink \textit{et al} \cite{warmelink_amelio:_2017} concluded that MR escape room games do have team-building potential and their research further validates usefulness of VR/MR games.
+
+\paragraph{VR Escape Rooms} \label{VR Escape Rooms}
+Using Mixed Reality with escape rooms has not been done very much, yet there are many Virtual Reality Escape Rooms and they have become more popular in the last few years \cite{andy_odonnell_10_nodate}. A VR Escape Room is a fully virtual escape room simulation, in which the players solve puzzles and complete tasks all within a virtual environment, and they usually interact with the environment using motion controllers.
+
+Some key benefits of VR escape rooms are that they can be experienced almost anywhere and anytime, they are not as limited, and they do not require a building to be rented or purchase to place the room \cite{pendit_virtual_2017}. Pendit \textit{et al} designed a VR escape room to help users with the phobia of dark and gloomy environments \cite{pendit_virtual_2017}. An xbox controller was used in that study for the movement of the player and the game sometimes appeared fuzzy, which resulted in the players feeling weak and dizzy. These are two problems that would not happen in MR as the user isn't fully immersed in the virtual environment, only partially. 
+
+\subsection{Learning}
+\subsubsection{Educational Games}
+Serious games are games that do not have entertainment, enjoyment or fun as their main purpose \cite{michael_serious_nodate, ma_origins_2011}. Educational games are a class of serious games, which have  education/learning as their primary purpose \cite{roungas_model-driven_2016}. Classical learning applications are usually dry and demotivating and don't keep the user focused for long periods of time \cite{wagner_augmented_2003}. Because games are fun, motivating, and exercise the mind they can be an effective educational tool \cite{paiva_ilearntest_2016} and could keep the user focused for a longer period of time. There are a number of distinct design elements that seem to be important for learning in educational games, such as, rules, goals, and rewards \cite{dondlinger_educational_2007}. Roungas \cite{roungas_model-driven_2016} presents a framework for educational design that outlines characteristics that influence learning, entertainment and game design. The learning characteristics are: readiness for learning, motivation, repetition, stimulus, and reward \& punishment. Each of these can impact the learning process in a positive way \cite{roungas_model-driven_2016}.
+\subsubsection{Augmented Reality for Education} \label{Augmented Reality Education}
+Augmented reality has a potential for learning, a relatively high number of research papers have investigated the influence of augmented reality for educational purposes. 
+
+Radu \cite{radu_why_2012} reviewed 32 comparative AR publications and identified positive and negative learning effects of AR, as well as the underlying factors of what causes the benefits. Some benefits include: Increased content understanding, Increased motivation, and improved long-term memory retention. 
+
+Radu \cite{radu_why_2012} explains that AR tends to be more effective at teaching students than other media such as books or videos. This is specifically true for learning spatial domains, for example Marz \textit{et al} \cite{marz_dissertation_nodate} gathered evidence that actually seeing geometry in 3D and interacting with it can enhance students' understanding of it. Figure 3 shows students working with Construct3D using AR. One of the main advantages for geometry students of seeing three dimensional objects using AR is that without AR they would have to calculate and construct the geometry with traditional pen and paper methods \cite{kaufmann_mathematics_nodate}. 
+
+Similarly Billinghurst \textit{et al} \cite{billinghurst_magicbook:_2001} developed a mixed reality interface for viewing and interacting with spatial data sets. They say that another benefit of AR is being able to enhance collaborative tasks, as it is possible to collaboratively view 3D models, like geometry or scientific data, augmented onto the real world. Another study found that when using an AR map, as opposed to a digital map, students collaborated much more \cite{morrison_like_2009}. Morrison \textit{et al} observed that the students using the AR map gathered around the map more often, and they described it as: "like bees around the hive", whereas with the digital map one person would typically read the map and lead the others.
+
+In another paper by Billinghurst \cite{billinghurst_augmented_nodate} they explain how AR objects displayed in an educational setting can be enhanced in ways not usually possible with real physical objects, such as providing a dynamic overlay of information, which can be highly beneficial for the learning process for students.
+
+In one evaluation study they compared the use of Construct3D in AR with a non AR desktop application, for solving geometric problems \cite{shumaker_summary_2007}. Almost 100 Austrian high school students took part in the experiment, and the results were collected through a questionnaire with 7 scales. The results showed that students using AR gave significantly higher ratings for most categories, especially satisfaction, learnability and controllability.  
+
+\includegraphics[width=242pt]{construct3D}
+Figure 3. Students are working with Construct3D  \cite{marz_dissertation_nodate}
+\newline
+
+According to Radu \cite{radu_why_2012}, users' high enthusiasm to engage with AR experiences was also noted in multiple papers, this means more motivation to learn which, in turn, could lead to a better learning experience. Motivation and engagement are both very important for learning and significantly influence learning experience for students \cite{newmann_student_1992, maulana_teacherstudent_2011}. 
+
+
+\section{Methodology} \label{Methodology}
+The aim of this project is to investigate whether Mixed Reality can be used to enhance the learning experience in an escape room context. This will be measured through a questionnaire and interview after the participants have played the proposed escape room puzzle.
+
+\subsection{Hypotheses} \label{Hypotheses}
+My hypotheses are:
+\begin{itemize}
+	\item \textbf{Null Hypothesis 1} The use of Augmented Reality as a teaching tool for an escape room puzzle has no effect on learning experience.
+	\item \textbf{Alternative Hypothesis 1} The use of Augmented Reality as a teaching tool for an escape room puzzle has a positive effect on learning experience.
+	\item \textbf{Null Hypothesis 2} The use of Augmented Reality as a teaching tool for an escape room puzzle has no effect on time taken to complete the puzzle.
+	\item \textbf{Alternative Hypothesis 2} The use of Augmented Reality as a teaching tool for an escape room puzzle decreases the time taken to complete the puzzle.
+\end{itemize}
+
+\subsection{Testing}
+An independent measures design will be used in this experiment, meaning there will be two separate groups, one for each condition. The dependent variables will be the learning experience and the time taken to complete the puzzle. The independent variable is the type of learning method, either using the HoloLens or not using the HoloLens. This design was chosen to allow for the same puzzle to be used in both conditions, which will provide more valid data from the questionnaires and interviews. If all the participants were to take part in both conditions they would have already learned how to complete the puzzle from the first condition, making the second condition redundant. This could be prevented by using a completely different puzzle that require the students to learn something else, however, this would make the comparison in learning experience unreliable as the students would be learning two different things. I will use a t test to check if my findings are significant.  
+
+Participants will play the escape room puzzle alone. The reason for this is so that each participant in the HoloLens condition will be able to use it for the full duration of the puzzle. If the escape room was completed in groups this would require some networking between two or more HoloLens devices. Due to scope of the project and the resources available this would not be achievable. A negative of this is that it takes away the team collaboration element of escape rooms, which is a fundamental aspect of them. 
+
+\subsection{Puzzle Design}
+Section~\ref{Hypotheses} shows the hypotheses that will be tested in this experiment. To test these, an escape rooms puzzle will be designed, which requires the users to learn something in order to complete the puzzle. This will be taught to the user either through AR with the HoloLens or in a more traditional way, like a subject text book page. 
+
+The escapED framework \cite{clarke_escaped:_2017} will be used to design the escape room puzzle. Using this framework the escape room can be designed with education as it's primary purpose.
+
+\subsection{Equipment}
+The main piece of equipment that will be used for the experiments will be the HoloLens. This is a suitable device since it has accurate spacial mapping and understanding, both of which would be highly useful in an escape room. Additionally it is fully wireless unlike some other devices, meaning it can easily be used in an escape room environment without needing to worry about wires and gives the user full freedom to explore the room.
+
+As described in Section~\ref{technical capability} the HoloLens is highly advanced, but it still comes with some limitations and the optimal conditions will need to be considered when developing the escape room application.  
+
+\subsection{Data Collection}
+After each participant has completed the escape room puzzle they will be asked to complete a questionnaire about their experience. The questionnaire will include multiple rating scales between 1 and 10 for different learning experience factors. This will provide some useful quantitative data that can be easily analysed to prove, or disprove, the hypotheses.
+The participants will also be timed to measure their learning speed, which will also be an easy to analyze data set. 
 
 % references section
 
@@ -113,9 +241,10 @@ The conclusion goes here.
 
 % Appendices
 
-\appendices
-\section{First appendix}
-Appendices are optional. Delete or comment out this part if you do not need them.
+%\appendices
+%\section{First appendix}
+%Appendices are optional. Delete or comment out this part if you do not need them.
 
 % that's all folks
 \end{document}
+
